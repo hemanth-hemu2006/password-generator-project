@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo ID Card</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.card{
+    width:350px;
+    border:3px solid #333;
+    border-radius:10px;
+    background:#fff;
+    padding:15px;
+}
+
+.header{
+    text-align:center;
+    color:red;
+    font-weight:bold;
+    font-size:22px;
+}
+
+.demo{
+    color:#d00000;
+    text-align:center;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.content{
+    display:flex;
+    gap:15px;
+}
+
+img{
+    width:100px;
+    height:120px;
+    object-fit:cover;
+    border:1px solid #555;
+}
+
+.info p{
+    margin:6px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="header">DL ID Card</div>
+    <div class="demo">DRIVING LICENSE</div>
+
+    <div class="content">
+        <img id="photo" src="" alt="Photo">
+
+        <div class="info">
+            <p><strong>Name:</strong> Hemanth.D</p>
+            <p><strong>ID:</strong> AP-2314</p>
+            <p><strong>DOB:</strong> 26-march-2006</p>
+            <p><strong>Area permit:</strong> Chittoor-AP</p>
+            <p><strong>Liscense Type:</strong> Driving Liscense</p>
+        </div>
+    </div>
+
+    <br>
+
+    <input type="file" id="upload">
+
+</div>
+
+<script>
+document.getElementById("upload").addEventListener("change", function(e){
+    const file = e.target.files[0];
+    if(file){
+        document.getElementById("photo").src = URL.createObjectURL(file);
+    }
+});
+</script>
+
+</body>
+</html>
